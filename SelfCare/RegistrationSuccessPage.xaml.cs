@@ -14,17 +14,20 @@ using SelfCare.Entities;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Microsoft.Phone.Shell;
+using SelfCare.DAL;
 namespace SelfCare
 {
     public partial class RegistrationSuccessPage : PhoneApplicationPage
     {
+        public Agent AgentReference { set; get; }
+
         public RegistrationSuccessPage()
         {
             InitializeComponent();
         }
 
-
-        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        
+ protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
 {
     base.OnNavigatedTo(e);
     
@@ -34,9 +37,12 @@ namespace SelfCare
 
 
     //Way2
-    Agent MyAgent = PhoneApplicationService.Current.State["param"] as Agent;
+    //Agent MyAgent = PhoneApplicationService.Current.State["param"] as Agent;
+ 
+    //Way3 :: using inObject Reference
 
-
+    Agent MyAgent = this.AgentReference;
+    
     string content = String.Format("UserName    : {0}    \n" +
                                    "Password    : {1}   \n" +
                                    "Agency  : {2}   \n" +

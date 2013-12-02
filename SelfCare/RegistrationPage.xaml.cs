@@ -87,7 +87,12 @@ namespace SelfCare
             */
 
              //way 2
-             PhoneApplicationService.Current.State["param"] = MyAgent;
+             //PhoneApplicationService.Current.State["param"] = MyAgent;
+
+
+            //way3 :: using OnNavigatedFrom to assign the reference to target object
+
+            //way4 :: using Event Arguments Extension
              NavigationService.Navigate(new Uri("/RegistrationSuccessPage.xaml", UriKind.Relative));
         
         }
@@ -96,5 +101,57 @@ namespace SelfCare
         {
             return true;
         }
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+            base.OnNavigatedTo(e);
+
+            RegistrationSuccessPage obj = e.Content as RegistrationSuccessPage;
+
+            string UserName = this.agentTextbox.Text;
+            string Password = this.passwordTextbox.Text;
+            string Agency = "";
+
+            string Proficiency = "";
+            string RecordCreatedDateTime = DateTime.Now.ToString();
+
+            bool? IsUndercover = undercoverCheckBox.IsChecked;
+
+
+            if (ciaRadioButton.IsChecked == true)
+            {
+                Agency = "CIA";
+            }
+            else if (mi6RadioButton.IsChecked == true)
+            {
+                Agency = "MI6";
+            }
+            else if (nsaRadioButton.IsChecked == true)
+            {
+                Agency = "NSA";
+            }
+            else
+            {
+                Agency = "NONE";
+            }
+
+
+            ListBoxItem lbi = (ListBoxItem)proficienciesListBox.SelectedItem;
+            Proficiency = (string)lbi.Content;
+
+
+            obj.AgentReference = new Agent();
+
+
+            obj.AgentReference.Agency = Agency;
+            obj.AgentReference.Password = Password;
+            obj.AgentReference.Proficiency = Proficiency;
+            obj.AgentReference.RecordCreatedDateTime = RecordCreatedDateTime;
+            obj.AgentReference.UserName = UserName;
+            obj.AgentReference.IsUndercover = IsUndercover;
+
+        }
+
     }
 }
