@@ -12,24 +12,86 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" >
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
-        <controls:Pivot Title="MY APPLICATION">
-            <!--Pivot item one-->
-            <controls:PivotItem Header="item1">
-                <Grid>
-                    <Button Content="Button" Height="72" HorizontalAlignment="Left" Margin="148,87,0,0" Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" />
-                    <TextBlock Height="114" HorizontalAlignment="Left" Margin="135,260,0,0" Name="textBlock1" Text="TextBlock" VerticalAlignment="Top" Width="214" />
-                </Grid>
-            </controls:PivotItem>
+        <controls:Pivot Title="MY APPLICATION" 
+                        ItemsSource="{Binding}"
+                        LoadingPivotItem="Pivot_LoadingPivotItem">
 
+            <controls:Pivot.HeaderTemplate>
+                <DataTemplate>
+
+                    <TextBlock Text="{Binding title}"  />
+                </DataTemplate>
+
+            </controls:Pivot.HeaderTemplate>
+            
+            <controls:Pivot.ItemTemplate >
+                <DataTemplate>
+                    <ListBox ItemsSource="{Binding Posts}" >
+                       
+                    <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0 0 0 12">
+                        <TextBlock Text="{Binding title}"  
+           TextWrapping="Wrap"
+           FontSize="{StaticResource PhoneFontSizeLarge}"
+	       Foreground="{StaticResource PhoneAccentBrush}"/>
+                        <Image Source="{Binding thumbnail}" />
+                        <TextBlock Text="{Binding date}" />
+                    </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox >
+             
+           
+                </DataTemplate>
+
+            </controls:Pivot.ItemTemplate>
+            
+            
+            
+            
+            
+            
+            
+            <!--Pivot item one-->
+            <!--<controls:PivotItem Header="item1">
+                <Grid>
+                    <Button Content="Button" Height="72" HorizontalAlignment="Left" Margin="17,503,0,0" Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" />
+                    <TextBlock Height="33" HorizontalAlignment="Left" Margin="45,470,0,0" Name="textBlock1" Text="TextBlock" VerticalAlignment="Top" Width="214" />
+                </Grid>
+            </controls:PivotItem>-->
+
+            
+            
+            
+            
+            
             <!--Pivot item two-->
-            <controls:PivotItem Header="item2">
-                <Grid/>
-            </controls:PivotItem>
+            <!--<controls:PivotItem Header="item2">-->
+                <!--<ListBox ItemsSource="{Binding}" DisplayMemberPath="title"/>-->
+                <!--<ListBox ItemsSource="{Binding}" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0 0 0 12">
+                                <TextBlock Text="{Binding title}"  
+           TextWrapping="Wrap"
+           FontSize="{StaticResource PhoneFontSizeLarge}"
+	       Foreground="{StaticResource PhoneAccentBrush}"/>
+                                <Image Source="{Binding thumbnail}" />
+                                <TextBlock Text="{Binding date}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>-->
+            
+            
+            
         </controls:Pivot>
     </Grid>
 
@@ -44,5 +106,5 @@
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>-->
-    
+
 </phone:PhoneApplicationPage>

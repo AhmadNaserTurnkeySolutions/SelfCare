@@ -17,7 +17,7 @@
 
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" >
+    <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
 
 
 
@@ -150,7 +150,7 @@
                     Grid.Row="7"
                     Grid.Column="2"
                     Content="OK"
-                    Margin="11,20,-11,50" Grid.RowSpan="2" />
+                    Margin="11,20,-11,50" Grid.RowSpan="2" Click="okButton_Click" />
 
         </Grid>
 
