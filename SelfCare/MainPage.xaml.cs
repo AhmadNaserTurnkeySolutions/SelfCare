@@ -59,5 +59,32 @@ namespace SelfCare
             NavigationService.Navigate(new Uri("/RegistrationPage.xaml", UriKind.Relative));
             
         }
+
+        private void hyperlinkButton1_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SimpleBinding.xaml", UriKind.Relative));
+        }
+
+        private void hyperlinkButton2_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SimpleBinding2.xaml", UriKind.Relative));
+        }
+
+        private void hyperlinkButton3_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SimpleBinding3.xaml", UriKind.Relative));
+        }
+
+        private void hyperlinkButton4_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/my.xaml", UriKind.Relative));
+           
+        }
+
+        private void hyperlinkButton5_Click(object sender, RoutedEventArgs e)
+        {
+
+            NavigationService.Navigate(new Uri("/SimpleBinding4.xaml", UriKind.Relative));
+        }
     }
 }

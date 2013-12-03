@@ -57,6 +57,11 @@ SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
             <Button Content="Login" Height="88" HorizontalAlignment="Left" Margin="221,412,0,0" Name="button2" VerticalAlignment="Top" Width="235" Background="#FF41B19B" Click="button2_Click" />
             <TextBox Height="88" HorizontalAlignment="Left" Margin="-4,248,0,0" Name="textBox1" Text="Username" VerticalAlignment="Top" Width="460" Background="#FFDCE8F1" BorderBrush="White" BorderThickness="5" Foreground="Gray" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" Tag="UserName" />
             <TextBox Height="88" HorizontalAlignment="Left" Margin="-4,318,0,0" Name="textBox3" Text="Password" VerticalAlignment="Top" Width="460" Background="#FFDCE8F1" BorderBrush="White" BorderThickness="5" Foreground="Gray" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" Tag="Password" />
+            <HyperlinkButton Content="EX1" Height="30" HorizontalAlignment="Left" Margin="0,753,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="103" Click="hyperlinkButton1_Click" />
+            <HyperlinkButton Content="EX2" Height="30" HorizontalAlignment="Left" Margin="86,753,0,0" Name="hyperlinkButton2" VerticalAlignment="Top" Width="72" Click="hyperlinkButton2_Click" />
+            <HyperlinkButton Content="EX3" Height="30" HorizontalAlignment="Left" Margin="159,753,0,0" Name="hyperlinkButton3" VerticalAlignment="Top" Width="72" Click="hyperlinkButton3_Click" />
+            <HyperlinkButton Content="EX4" Height="30" HorizontalAlignment="Left" Margin="221,753,0,0" Name="hyperlinkButton4" VerticalAlignment="Top" Width="72" Click="hyperlinkButton4_Click" />
+            <HyperlinkButton Content="Binding Tutorial" Height="30" HorizontalAlignment="Left" Margin="15,717,0,0" Name="hyperlinkButton5" VerticalAlignment="Top" Width="200" Click="hyperlinkButton5_Click" />
         </Grid>
 
 

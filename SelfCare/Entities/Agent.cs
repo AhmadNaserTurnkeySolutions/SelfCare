@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Collections.Generic;
 
 namespace SelfCare.Entities
 {
@@ -19,6 +20,8 @@ namespace SelfCare.Entities
         public bool? IsUndercover { get; set; }
         public string Proficiency { get; set; }
         public string RecordCreatedDateTime { get; set; }
+
+        public List<Address> Addresses { get; set; }
 
         public void Save()
         {

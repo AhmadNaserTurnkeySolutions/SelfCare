@@ -67,10 +67,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DAL\RootObjectDao.cs" />
+    <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Agent.cs" />
+    <Compile Include="Entities\Data.cs" />
+    <Compile Include="Entities\MyProfile.cs" />
     <Compile Include="Entities\RootObject.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="my.xaml.cs">
+      <DependentUpon>my.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationPage.xaml.cs">
@@ -82,6 +88,18 @@
     <Compile Include="SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SimpleBinding.xaml.cs">
+      <DependentUpon>SimpleBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleBinding2.xaml.cs">
+      <DependentUpon>SimpleBinding2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleBinding3.xaml.cs">
+      <DependentUpon>SimpleBinding3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleBinding4.xaml.cs">
+      <DependentUpon>SimpleBinding4.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -92,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="my.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +123,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecondPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleBinding2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleBinding3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleBinding4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,6 +157,12 @@
     <Resource Include="Images\Desert.jpg" />
     <Resource Include="Images\bg.png" />
     <Resource Include="Images\correct.png" />
+    <Resource Include="Images\1.png" />
+    <Resource Include="Images\im.png" />
+    <Resource Include="Images\im1.png" />
+    <Resource Include="Images\INFO.png" />
+    <Resource Include="Images\ali.png" />
+    <Resource Include="Images\myprofile.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
