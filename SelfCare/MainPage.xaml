@@ -62,6 +62,7 @@ SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
             <HyperlinkButton Content="EX3" Height="30" HorizontalAlignment="Left" Margin="159,753,0,0" Name="hyperlinkButton3" VerticalAlignment="Top" Width="72" Click="hyperlinkButton3_Click" />
             <HyperlinkButton Content="EX4" Height="30" HorizontalAlignment="Left" Margin="221,753,0,0" Name="hyperlinkButton4" VerticalAlignment="Top" Width="72" Click="hyperlinkButton4_Click" />
             <HyperlinkButton Content="Binding Tutorial" Height="30" HorizontalAlignment="Left" Margin="15,717,0,0" Name="hyperlinkButton5" VerticalAlignment="Top" Width="200" Click="hyperlinkButton5_Click" />
+            <HyperlinkButton Content="HyperlinkButton" Height="30" HorizontalAlignment="Left" Margin="201,717,0,0" Name="hyperlinkButton6" VerticalAlignment="Top" Width="200" Click="hyperlinkButton6_Click" />
         </Grid>
 
 

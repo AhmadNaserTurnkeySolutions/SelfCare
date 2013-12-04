@@ -25,10 +25,8 @@ namespace SelfCare
         private void button2_Click(object sender, RoutedEventArgs e)
         {
 
-            string t1 = this.textBox1.Text;
-            string t2 = this.textBox3.Text;
-            string request = "/SecondPage.xaml?text1=" + t1 + "&text2=" + t2;
-            //NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
+            string request = "/MenuPage.xaml";
+           
             NavigationService.Navigate(new Uri(request, UriKind.Relative));
 
         }
@@ -85,6 +83,12 @@ namespace SelfCare
         {
 
             NavigationService.Navigate(new Uri("/SimpleBinding4.xaml", UriKind.Relative));
+        }
+
+        private void hyperlinkButton6_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/UpdatePage.xaml", UriKind.Relative));
+            
         }
     }
 }

@@ -8,13 +8,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using System.Collections.Generic;
+
 using System.Runtime.Serialization.Json;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace SelfCare.Entities
 {
-    //http://json2csharp.com/
+//http://ahmadnaser.com/?json=get_recent_posts
+//http://ahmadnaser.com/?json=get_category_index
+//http://jsoneditoronline.org/
+//http://json2csharp.com/
+
 
 
 
@@ -73,6 +79,7 @@ namespace SelfCare.Entities
 
     void HandleCategoryResponse(IAsyncResult ar)
     {
+
         var request = (HttpWebRequest)ar.AsyncState;
 
 
@@ -88,37 +95,48 @@ namespace SelfCare.Entities
         }
          * */
 
-        //Fancy Scenario 2 ::  getting objects
-        using (var response = (HttpWebResponse)request.EndGetResponse(ar))
+
+        try
         {
 
 
-
-            var serializer = new DataContractJsonSerializer(typeof(CategoryRootObject));
-            CategoryRootObject CategoryRootObject = (CategoryRootObject)serializer.ReadObject(response.GetResponseStream());
-            //Dispatcher.BeginInvoke(() => DataContext = items.posts);
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            //Fancy Scenario 2 ::  getting objects
+            using (var response = (HttpWebResponse)request.EndGetResponse(ar))
             {
-                int i = 0;
-                foreach (var c in CategoryRootObject.categories)
+
+
+
+                var serializer = new DataContractJsonSerializer(typeof(CategoryRootObject));
+                CategoryRootObject CategoryRootObject = (CategoryRootObject)serializer.ReadObject(response.GetResponseStream());
+                //Dispatcher.BeginInvoke(() => DataContext = items.posts);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MyCategories.Add(c);
+                    int i = 0;
+                    foreach (var c in CategoryRootObject.categories)
+                    {
+                        MyCategories.Add(c);
 
-                    i++;
+                        i++;
+                    }
                 }
+            );
+
+
             }
-        );
-   
-
-
-
+        }
+        catch (Exception ex)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show("Success 1"));
         }
 
-
-
-
-
     }
+          
+    
+    
+               
+
+
+
 
 
 
@@ -128,7 +146,8 @@ namespace SelfCare.Entities
     {
         var request = (HttpWebRequest)ar.AsyncState;
 
-     
+         try
+        {
 
         //Fancy Scenario 2 ::  getting objects
         using (var response = (HttpWebResponse)request.EndGetResponse(ar))
@@ -156,11 +175,19 @@ namespace SelfCare.Entities
 
         }
 
+        }
+         catch (Exception ex)
+         {
 
-
-
-
+             Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show("Success 2"));
+         }
+            
     }
+               
+        
+
+
+   
 
 
 

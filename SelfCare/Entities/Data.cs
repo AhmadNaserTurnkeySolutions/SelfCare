@@ -35,19 +35,19 @@ namespace SelfCare.Entities
 
         public void Loader()
         {
-
+       
             var dtemp = new List<SubData>() {
    
                 new SubData(){
              id= 21,
-            title= "C#",
-            description= "wu",
+            title= "Ali is here",
+            description= "wow awesome ",
 
             },
                             new SubData(){
              id= 16,
-            title= "Programmers",
-            description= "we",
+            title= "Weather is so cold",
+            description= "in rammallah , its 10 c",
 
             }
     };
@@ -56,14 +56,16 @@ namespace SelfCare.Entities
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
     {
-        int i = 0;
+        
         foreach (var c in dtemp)
         {
             this.SubsData.Add(c);
 
-            i++;
+           
         }
-    });
+    }
+    
+    );
 
         }
     }

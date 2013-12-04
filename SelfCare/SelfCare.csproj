@@ -69,14 +69,22 @@
     <Compile Include="DAL\RootObjectDao.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Agent.cs" />
+    <Compile Include="Entities\CategoryMenu.cs" />
     <Compile Include="Entities\Data.cs" />
     <Compile Include="Entities\MyProfile.cs" />
+    <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\RootObject.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="my.xaml.cs">
       <DependentUpon>my.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonData.xaml.cs">
+      <DependentUpon>PersonData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationPage.xaml.cs">
@@ -84,6 +92,9 @@
     </Compile>
     <Compile Include="RegistrationSuccessPage.xaml.cs">
       <DependentUpon>RegistrationSuccessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantMenu.xaml.cs">
+      <DependentUpon>ResturantMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
@@ -100,6 +111,9 @@
     <Compile Include="SimpleBinding4.xaml.cs">
       <DependentUpon>SimpleBinding4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdatePage.xaml.cs">
+      <DependentUpon>UpdatePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -110,7 +124,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="my.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PersonData.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -119,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegistrationSuccessPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResturantMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +168,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UpdatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
@@ -163,6 +193,17 @@
     <Resource Include="Images\INFO.png" />
     <Resource Include="Images\ali.png" />
     <Resource Include="Images\myprofile.png" />
+    <Resource Include="Images\updatehistory.png" />
+    <Resource Include="Images\Icons\Icons_ %281%29.png" />
+    <Resource Include="Images\Icons\Icons_ %282%29.png" />
+    <Resource Include="Images\Icons\Icons_ %283%29.png" />
+    <Resource Include="Images\Icons\Icons_ %284%29.png" />
+    <Resource Include="Images\Icons\Icons_ %285%29.png" />
+    <Resource Include="Images\Icons\Icons_ %286%29.png" />
+    <Resource Include="Images\Icons\Icons_ %287%29.png" />
+    <Resource Include="Images\Icons\Icons_ %288%29.png" />
+    <Resource Include="Images\Icons\Icons_ %289%29.png" />
+    <Resource Include="Images\pizza.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

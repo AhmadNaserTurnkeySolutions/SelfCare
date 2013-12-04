@@ -49,8 +49,11 @@
                                             <StackPanel Margin="0 0 0 12">
                                                 <TextBlock 
                                     Style="{StaticResource PhoneTextSmallStyle}"
-                                    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                                     Foreground="{StaticResource PhoneSubtleBrush}"
+                                    FontFamily="{StaticResource PhoneFontFamilyNormal
+
+}"
+                                     Foreground="{StaticResource PhoneSubtleBrush
+}"
                                     Text="{Binding Name}"/>
 
                                                 <TextBlock Text="{Binding Location}"/>
