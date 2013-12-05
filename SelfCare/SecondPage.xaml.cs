@@ -22,11 +22,84 @@ namespace SelfCare
     {
         public SecondPage()
         {
-            RootObjectDao d = new RootObjectDao();
-            InitializeComponent();
-           
 
-            DataContext = d.cats;
+            InitializeComponent();
+
+
+            DataContext = new[] {
+                                new Category(){
+             id= -1,
+            slug= "c",
+            title= "All",
+            description= "",
+
+            }
+            ,
+                new Category(){
+             id= 21,
+            slug= "c",
+            title= "C#",
+            description= "",
+
+            },
+                            new Category(){
+             id= 16,
+            slug= "c",
+            title= "Programmers",
+            description= "",
+
+            },
+                            new Category(){
+             id= 1,
+            slug= "c",
+            title= "Programming",
+            description= "",
+
+            },
+                            new Category(){
+             id= 20,
+            slug= "c",
+            title= "SalesForce",
+            description= "",
+
+            },
+                            new Category(){
+             id= 17,
+            slug= "c",
+            title= "Study Abroad",
+            description= "",
+
+            },
+                            new Category(){
+             id= 18,
+            slug= "c",
+            title= "Tech",
+            description= "",
+
+            },
+                            new Category(){
+             id= 8,
+            slug= "c",
+            title= "Technical Articles",
+            description= "",
+
+            },
+                            new Category(){
+             id= 19,
+            slug= "c",
+            title= "Training",
+            description= "",
+
+            },
+                            new Category(){
+             id= 23,
+            slug= "c",
+            title= "WP7",
+            description= "",
+
+            }
+
+            };
 
 
 
@@ -55,8 +128,8 @@ namespace SelfCare
         private void Pivot_LoadingPivotItem(object sender, PivotItemEventArgs e)
         {
             var C = (Category)e.Item.DataContext;
-            C.LoadCategories();
-            C.LoadCategoryPerPost();
+           // C.LoadCategories();
+            C.LoadPostsPerCategory();
         }
 
      

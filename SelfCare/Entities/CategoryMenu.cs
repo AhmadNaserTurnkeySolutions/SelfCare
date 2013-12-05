@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace SelfCare.Entities
 {
-    public class CategoryMenu
+    public class CategoryMenux
     {
 
         public string CategoryName { get; set; }
@@ -23,7 +23,7 @@ namespace SelfCare.Entities
 
         public ObservableCollection<CategoryItem> Items { set; get; }
 
-        public CategoryMenu() 
+        public CategoryMenux() 
         {
 
            Items = new ObservableCollection<CategoryItem>();
@@ -46,7 +46,7 @@ namespace SelfCare.Entities
                 {
                     var item1 = new CategoryItem() { Name = "MASAFINA", price = 20 };
 
-
+                   
 
                     /*//Solution # 1
                     
@@ -117,9 +117,9 @@ namespace SelfCare.Entities
         }
 
 
-
+      
     }
-
+   
     public class CategoryItem : IEquatable<CategoryItem>
 {
         public string Name { get; set; }

@@ -65,6 +65,7 @@
 
 
         </controls:Pivot>
+
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

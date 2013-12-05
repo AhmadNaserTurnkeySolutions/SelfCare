@@ -19,8 +19,8 @@ namespace SelfCare
         public SimpleBinding2()
         {
             InitializeComponent();
-            DataContext = new List<Data>() {
-            new Data(){
+            DataContext = new List<Datax>() {
+            new Datax(){
              id= -1,
             slug= "c",
             title= "All",
@@ -28,14 +28,14 @@ namespace SelfCare
 
             }
             ,
-                new Data(){
+                new Datax(){
              id= 21,
             slug= "c",
             title= "C#",
             description= "",
 
             },
-                            new Data(){
+                            new Datax(){
              id= 16,
             slug= "c",
             title= "Programmers",
@@ -50,7 +50,7 @@ namespace SelfCare
         {
 
 
-            var C = (Data)e.Item.DataContext;
+            var C = (Datax)e.Item.DataContext;
             C.Loader();
 
         }

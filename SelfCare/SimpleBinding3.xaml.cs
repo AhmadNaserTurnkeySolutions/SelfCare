@@ -20,8 +20,8 @@ namespace SelfCare
         {
             InitializeComponent();
 
-            DataContext = new List<Data>() {
-            new Data(){
+            DataContext = new List<Datax>() {
+            new Datax(){
              id= -1,
             slug= "c",
             title= "All",
@@ -29,14 +29,14 @@ namespace SelfCare
 
             }
             ,
-                new Data(){
+                new Datax(){
              id= 21,
             slug= "c1",
             title= "C#",
             description= "",
 
             },
-                            new Data(){
+                            new Datax(){
              id= 16,
             slug= "c2",
             title= "Programmers",

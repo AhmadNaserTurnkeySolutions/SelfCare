@@ -13,6 +13,7 @@ using System.Runtime.Serialization.Json;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Threading;
+using Newtonsoft.Json;
 
 namespace SelfCare.Entities
 {
@@ -52,9 +53,9 @@ namespace SelfCare.Entities
         Posts = new ObservableCollection<Post>();
     }
 
-    public void LoadCategoryPerPost()
+    public void LoadPostsPerCategory()
     {
-        var uri = new Uri("http://ahmadnaser.com/?json=get_recent_posts&count=3&page=1&cat="+this.id);
+        var uri = new Uri("http://ahmadnaser.com/?json=get_recent_posts&count=10&page=1&cat="+this.id);
         var request = (HttpWebRequest)HttpWebRequest.Create(uri);
 
 
@@ -163,9 +164,9 @@ namespace SelfCare.Entities
                 int i = 0;
                 foreach (var c in ps.posts)
                 {
+                    if (!this.Posts.Contains(c))
                     this.Posts.Add(c);
 
-                    i++;
                 }
             }
         );
@@ -179,7 +180,7 @@ namespace SelfCare.Entities
          catch (Exception ex)
          {
 
-             Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show("Success 2"));
+             Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show("Failed"));
          }
             
     }
@@ -400,7 +401,7 @@ public class ThumbnailImages
     //public ProgressionSingleUncropped2 __invalid_name__progression-single-uncropped { get; set; }
 }
 
-public class Post
+public class Post : IEquatable<Post>
 {
     public int id { get; set; }
     public string type { get; set; }
@@ -424,7 +425,113 @@ public class Post
     public CustomFields custom_fields { get; set; }
     public string thumbnail_size { get; set; }
     public ThumbnailImages thumbnail_images { get; set; }
+    
+    public bool Equals(Post other)
+    {
+        if (other == null)
+            return false;
+
+        return this.id == other.id;
+    }
 }
+
+public class Data
+{
+    public string url { get; set; }
+    public bool is_silhouette { get; set; }
+}
+
+public class Picture
+{
+    public Data data { get; set; }
+}
+
+public class FbRootObject
+{
+    public string gender { get; set; }
+    public string link { get; set; }
+    public string username { get; set; }
+    public string id { get; set; }
+    public Picture picture { get; set; }
+}
+
+
+
+public class CategoryMenu
+{
+    public int Id { get; set; }
+    public string CategoryName { get; set; }
+    public string CategoryDescription { get; set; }
+    public bool IsDataLoaded { get; set; }
+
+    public ObservableCollection<ItemsRootObject> Items { set; get; }
+
+    public CategoryMenu() 
+    {
+
+        Items = new ObservableCollection<ItemsRootObject>();
+    }
+
+    public void LoadItems() 
+    {
+        WebClient webClient = new WebClient();
+        webClient.DownloadStringCompleted += webClient2_DownloadStringCompleted;
+     //   ProgressBarRequest.Visibility = System.Windows.Visibility.Visible;
+        webClient.DownloadStringAsync(new Uri("http://localhost:2819/Category/GetAllItemsInCategory/"+this.Id));
+    }
+
+    void webClient2_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(e.Result))
+            {
+                //Parse JSON result as POCO 
+                var root1 = JsonConvert.DeserializeObject<List<ItemsRootObject>>(e.Result);
+
+                var x = root1.Count;
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                   
+                    foreach (var item in root1)
+                    {
+                        this.Items.Add(item);
+                       
+                    }
+                }
+            );
+
+                //  string info = string.Format("Id : {0}\nUserName : {1}\n{2}", root1.username, root1.id, root1.gender);
+
+
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.ToString());
+        }
+        finally
+        {
+         //   ProgressBarRequest.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+    }
+
+}
+
+public class ItemsRootObject
+{
+    public CategoryMenu CategoryMenu { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int price { get; set; }
+    public int CategoryMenuId { get; set; }
+}
+
+
+
+
 
 
 }

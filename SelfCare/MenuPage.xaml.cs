@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using SelfCare.Entities;
+using Newtonsoft.Json;
+using System.Windows.Media.Imaging;
 
 namespace SelfCare
 {
@@ -43,6 +46,24 @@ namespace SelfCare
         {
             NavigationService.Navigate(new Uri("/ResturantMenu.xaml", UriKind.Relative));
         }
+
+        private void image7_Tap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/FbPage.xaml", UriKind.Relative));
+   }
+
+        private void image8_Tap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/WebServiceMenu.xaml", UriKind.Relative));
+        }
+
+    
+
+
+    
+        
+
+
 
 
     }

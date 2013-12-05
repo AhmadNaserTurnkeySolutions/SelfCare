@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace SelfCare.Entities
 {
-    public class Data
+    public class Datax
     {
         public int id { get; set; }
         public string slug { get; set; }
@@ -25,7 +25,7 @@ namespace SelfCare.Entities
         public ObservableCollection<SubData> SubsData { set; get; }
 
 
-        public Data()
+        public Datax()
         {
 
             SubsData = new ObservableCollection<SubData>();

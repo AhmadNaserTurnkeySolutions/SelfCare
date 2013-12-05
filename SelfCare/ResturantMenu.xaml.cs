@@ -22,23 +22,23 @@ namespace SelfCare
         {
             InitializeComponent();
 
-            DataContext = new List<CategoryMenu>() 
+            DataContext = new List<CategoryMenux>() 
             {
          
 
-                          new CategoryMenu(){
+                          new CategoryMenux(){
             CategoryName="PIZAA",
             CategoryDescription="hint:MASAFINA,Chicken,Vegable...."
             },
-            new CategoryMenu(){
+            new CategoryMenux(){
             CategoryName="Salads",
             CategoryDescription="hint:salads,turkish,chicken salads...."
             },
-                      new CategoryMenu(){
+                      new CategoryMenux(){
             CategoryName="Drinks",
             CategoryDescription="hint:Cola,Tea,Caffe,XL...."
             },
-                      new CategoryMenu(){
+                      new CategoryMenux(){
             CategoryName="MEALS",
             CategoryDescription="hint:subs,fried chicken...."
             }
@@ -49,7 +49,7 @@ namespace SelfCare
         private void Pivot_LoadingPivotItem(object sender, PivotItemEventArgs e)
         {
       
-           CategoryMenu CM= (CategoryMenu)e.Item.DataContext;
+           CategoryMenux CM= (CategoryMenux)e.Item.DataContext;
         
             CM.MenuItemsLoader();
         }
