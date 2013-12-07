@@ -1,0 +1,116 @@
+﻿@model ResturantServiceCenter.Models.Location
+
+@{
+    ViewBag.Title = "Create";
+}
+
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <style>
+        .map_canvas { 
+  width: 600px; 
+  height: 400px; 
+  margin: 10px 20px 10px 0;
+}
+
+    </style>
+
+<script src="~/Scripts/jquery.geocomplete.js"></script>
+<h2>Create</h2>
+
+
+
+    <div class="map_canvas"></div>
+    
+    <form>
+      <input id="geocomplete" type="text" placeholder="Type in an address" value="Silwad" />
+      <input id="find" type="button" value="find" />
+      
+      <fieldset>
+        <label>Latitude</label>
+        <input name="lat" type="text" value="">
+      
+        <label>Longitude</label>
+        <input name="lng" type="text" value="">
+      
+        <label>Formatted Address</label>
+        <input name="formatted_address" type="text" value="">
+      </fieldset>
+      
+      <a id="reset" href="#" style="display:none;">Reset Marker</a>
+    </form>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Location</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lat)
+            @Html.ValidationMessageFor(model => model.lat)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lng)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lng)
+            @Html.ValidationMessageFor(model => model.lng)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.address)
+            @Html.ValidationMessageFor(model => model.address)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+    <script>
+      $(function(){
+        $("#geocomplete").geocomplete({
+          map: ".map_canvas",
+          details: "form ",
+          markerOptions: {
+            draggable: true
+          }
+        });
+        
+        $("#geocomplete").bind("geocode:dragged", function (event, latLng) {
+   
+          $("input[name=lat]").val(latLng.lat());
+          $("input[name=lng]").val(latLng.lng());
+     
+          $("#reset").show();
+        });
+        
+        
+        $("#reset").click(function(){
+          $("#geocomplete").geocomplete("resetMarker");
+          $("#reset").hide();
+          return false;
+        });
+        
+        $("#find").click(function(){
+            $("#geocomplete").trigger("geocode");
+       
+            $('#address').val($('#geocomplete').val());
+        }).click();
+      });
+    </script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

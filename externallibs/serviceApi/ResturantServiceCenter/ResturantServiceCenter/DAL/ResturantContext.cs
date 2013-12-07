@@ -17,7 +17,7 @@ namespace ResturantServiceCenter.DAL
 
         public DbSet<CategoryMenu> Categories { set; get; }
         public DbSet<CategoryItem> Items { set; get; }
-
-
+        public DbSet<Location> Locations { set; get; }
+        
     }
 }

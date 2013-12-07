@@ -1,0 +1,163 @@
+﻿@model IEnumerable<ResturantServiceCenter.Models.Location>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
+<input id="address" type="text" value="Ramallah" />
+<input id="search" type="submit" value="Search" /></pre>
+<div id="map_canvas" style="height: 600px; width: 800px;"></div>
+<pre>
+
+
+    <script>
+
+
+        var map = null;
+        var geocoder = null;
+       var markers = [];
+       var infoWindow = null;
+
+        jQuery('#search').click(function () {
+            var address = jQuery('#address').val() || 'Ramallah';
+            if (map === null)
+                initialize();
+            searchAddress(address);
+        });
+
+var directionsDisplay,
+    directionsService,
+    map;
+
+        function initialize() {
+            var directionsService = new google.maps.DirectionsService();
+            directionsDisplay = new google.maps.DirectionsRenderer();
+            var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+            var mapOptions = { zoom:7, mapTypeId: google.maps.MapTypeId.ROADMAP, center: chicago }
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            directionsDisplay.setMap(map);
+              geocoder = new google.maps.Geocoder();
+              infoWindow = new google.maps.InfoWindow();
+        }
+
+
+        //function initializeMap() {
+        //    var mapOptions = {
+        //        zoom: 13,
+        //        mapTypeId: google.maps.MapTypeId.ROADMAP
+        //    }
+        //    map = new google.maps.Map(
+        //        document.getElementById('map_canvas'), mapOptions);
+        //    geocoder = new google.maps.Geocoder();
+        //    infoWindow = new google.maps.InfoWindow();
+        //}
+
+        function searchAddress(address) {
+            geocoder.geocode({ 'address': address },
+                function (results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        var latlng = results[0].geometry.location;
+                        map.setCenter(latlng);
+                        searchStores(latlng.lat(), latlng.lng());
+                    } else {
+                        alert('Address not found: ' + status);
+                    }
+                });
+        }
+
+        function searchStores(lat, lng) {
+            var url = 'http://localhost:2819/Location/SearchingWithACenter';
+            var parameter = { lat: lat, lng: lng };
+            jQuery.ajax({
+                url: url,
+                data: parameter,
+                dataType: 'json',
+                success: showStores
+            });
+        }
+
+        function showStores(data, status, xhr) {
+            console.log(data);
+        
+            //for (i = 0; i < data.length; i++) {
+            //    var marker = new google.maps.Marker({
+            //        map: map,
+            //        title: data[i].address,
+            //        position: new google.maps.LatLng(data[i].lat, data[i].lng),
+            //        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000'
+            //    });
+
+            //markers=new [data.length];
+                infoWindow.close();
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(null);
+                }
+                markers.length = 0;
+
+                for (var i in data) {
+                    createMarker(data[i]);
+                }
+              
+
+            }
+        
+        function createMarker(store) {
+            var latlng = new google.maps.LatLng(
+                            parseFloat(store.lat),
+                            parseFloat(store.lng)
+                        );
+            var html = "<b>" + store.address + "</b>" +
+                       store.distance + " miles";
+            var marker = new google.maps.Marker({
+                map: map,
+                position: latlng
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                infoWindow.setContent(html);
+                infoWindow.open(map, marker);
+            });
+            markers.push(marker);
+        }
+
+    </script>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.lat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lng)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

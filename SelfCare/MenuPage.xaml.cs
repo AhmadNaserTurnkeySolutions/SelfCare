@@ -75,6 +75,11 @@ namespace SelfCare
             NavigationService.Navigate(new Uri("/LocalDatabase.xaml", UriKind.Relative));
         }
 
+        private void image9_Tap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Maps.xaml", UriKind.Relative));
+        }
+
     
 
 

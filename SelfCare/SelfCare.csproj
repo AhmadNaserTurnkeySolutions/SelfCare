@@ -48,13 +48,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Devices.Sensors" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\externallibs\Json50r8\Bin\Portable40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="system.data.linq" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Servicemodel" />
     <Reference Include="System.Servicemodel.Web" />
@@ -73,6 +76,13 @@
     </Compile>
     <Compile Include="DAL\AppSettings.cs" />
     <Compile Include="DAL\ImageBytesUtils.cs" />
+    <Compile Include="Maps.xaml.cs">
+      <DependentUpon>Maps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Maps1.xaml.cs">
+      <DependentUpon>Maps1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Map\GeoLocationMock.cs" />
     <Compile Include="MySettings.cs" />
     <Compile Include="DAL\RootObjectDao.cs" />
     <Compile Include="Entities\Address.cs" />
@@ -167,6 +177,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maps1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -267,6 +285,10 @@
     <Resource Include="Images\Icons\Icons_ %289%29.png" />
     <Resource Include="Images\pizza.png" />
     <Resource Include="Images\fb.png" />
+    <Resource Include="Map\icons\ZoomIn_Black.png" />
+    <Resource Include="Map\icons\ZoomIn_White.png" />
+    <Resource Include="Map\icons\ZoomOut_Black.png" />
+    <Resource Include="Map\icons\ZoomOut_White.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

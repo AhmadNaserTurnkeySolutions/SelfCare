@@ -52,7 +52,7 @@
             <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (6).png" Grid.Row="1"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image6" Stretch="Fill" VerticalAlignment="Top" Tap="image6_Tap" />
             <Image Source="/SelfCare;component/Images/Icons/Icons_ (7).png" Grid.Row="2"  Height="111" Width="111" HorizontalAlignment="Left" Margin="23,0,0,0" Name="image7" Stretch="Fill" VerticalAlignment="Top" Tap="image7_Tap"  />
             <Image Grid.Column="2" Source="/SelfCare;component/Images/Icons/Icons_ (8).png" Grid.Row="2"  Height="111" Width="111" HorizontalAlignment="Left" Margin="24,0,0,0" Name="image8" Stretch="Fill" VerticalAlignment="Top" Tap="image8_Tap" />
-            <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (9).png" Grid.Row="2"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image9" Stretch="Fill" VerticalAlignment="Top"   />
+            <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (9).png" Grid.Row="2"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image9" Stretch="Fill" VerticalAlignment="Top" Tap="image9_Tap" />
   
         </Grid>
         
