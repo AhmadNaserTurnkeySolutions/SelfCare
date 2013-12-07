@@ -45,11 +45,11 @@
 
 
             <Image Source="/SelfCare;component/Images/Icons/Icons_ (2).png" Height="111" Width="111" HorizontalAlignment="Left" Margin="23,0,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Tap="image1_Tap" />
-            <Image Grid.Column="2" Source="/SelfCare;component/Images/Icons/Icons_ (3).png" Height="111" Width="111" HorizontalAlignment="Left" Margin="23,0,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top"   />
-            <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (4).png" Grid.Row="0"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top"   />
+            <Image Grid.Column="2" Source="/SelfCare;component/Images/Icons/Icons_ (3).png" Height="111" Width="111" HorizontalAlignment="Left" Margin="23,0,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Tap="image2_Tap" />
+            <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (4).png" Grid.Row="0"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Tap="image3_Tap" />
             <Image Source="/SelfCare;component/Images/Icons/Icons_ (1).png" Grid.Row="1"  Height="111" Width="111" HorizontalAlignment="Left" Margin="23,0,0,0" Name="image4" Stretch="Fill" VerticalAlignment="Top" Tap="image4_Tap" />
             <Image Grid.Column="2" Source="/SelfCare;component/Images/Icons/Icons_ (5).png" Grid.Row="1"  Height="111" Width="111" HorizontalAlignment="Left" Margin="23,0,0,0" Name="image5" Stretch="Fill" VerticalAlignment="Top" Tap="image5_Tap" />
-            <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (6).png" Grid.Row="1"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image6" Stretch="Fill" VerticalAlignment="Top"   />
+            <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (6).png" Grid.Row="1"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image6" Stretch="Fill" VerticalAlignment="Top" Tap="image6_Tap" />
             <Image Source="/SelfCare;component/Images/Icons/Icons_ (7).png" Grid.Row="2"  Height="111" Width="111" HorizontalAlignment="Left" Margin="23,0,0,0" Name="image7" Stretch="Fill" VerticalAlignment="Top" Tap="image7_Tap"  />
             <Image Grid.Column="2" Source="/SelfCare;component/Images/Icons/Icons_ (8).png" Grid.Row="2"  Height="111" Width="111" HorizontalAlignment="Left" Margin="24,0,0,0" Name="image8" Stretch="Fill" VerticalAlignment="Top" Tap="image8_Tap" />
             <Image Grid.Column="4" Source="/SelfCare;component/Images/Icons/Icons_ (9).png" Grid.Row="2"  Height="111" Width="111" HorizontalAlignment="Left" Margin="12,0,0,0" Name="image9" Stretch="Fill" VerticalAlignment="Top"   />

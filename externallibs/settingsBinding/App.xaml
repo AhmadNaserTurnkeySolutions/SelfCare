@@ -6,14 +6,12 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:local="clr-namespace:SelfCare"
     >
-  <!--   -->
-   
 
     <!--Application Resources-->
 
     <Application.Resources>
         <!-- Settings -->
-      <local:MySettings x:Key="MySettings" AlwaysSaveOnChange="True" />
+        <local:MySettings x:Key="MySettings" AlwaysSaveOnChange="True" />
     </Application.Resources>
 
 

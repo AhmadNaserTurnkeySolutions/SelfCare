@@ -25,6 +25,6 @@ namespace SelfCare.Entities
         public string Phone { set; get; }
         public string Email { set; get; }
         public string Image { set; get; }
-
+        public byte[] Imagebytes { set; get; }
     }
 }

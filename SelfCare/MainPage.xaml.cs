@@ -19,6 +19,7 @@ namespace SelfCare
         public MainPage()
         {
             InitializeComponent();
+
     
         }
 
@@ -89,6 +90,18 @@ namespace SelfCare
         {
             NavigationService.Navigate(new Uri("/UpdatePage.xaml", UriKind.Relative));
             
+        }
+
+        private void hyperlinkButton7_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
+        }
+
+        private void hyperlinkButton8_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SettingsPage2.xaml", UriKind.Relative));
         }
     }
 }

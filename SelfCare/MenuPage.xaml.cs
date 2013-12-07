@@ -57,6 +57,24 @@ namespace SelfCare
             NavigationService.Navigate(new Uri("/WebServiceMenu.xaml", UriKind.Relative));
         }
 
+        private void image6_Tap(object sender, GestureEventArgs e)
+        {
+
+            NavigationService.Navigate(new Uri("/UploadImage.xaml", UriKind.Relative));
+
+        }
+
+        private void image2_Tap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/IsolatedStorageEx1.xaml", UriKind.Relative));
+            
+        }
+
+        private void image3_Tap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/LocalDatabase.xaml", UriKind.Relative));
+        }
+
     
 
 

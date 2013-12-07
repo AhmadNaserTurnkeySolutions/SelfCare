@@ -19,6 +19,8 @@ using System.Windows.Media.Imaging;
 
 using SelfCare.Entities;
 using Microsoft.Phone.Shell;
+using SelfCare.DAL;
+using System.Collections;
 
 namespace SelfCare
 {
@@ -33,9 +35,12 @@ namespace SelfCare
         {
             base.OnNavigatedTo(e);
 
-            string parameter = this.NavigationContext.QueryString["parameter"];
-            Person person = JsonConvert.DeserializeObject<Person>(parameter);
 
+
+
+            //string parameter = this.NavigationContext.QueryString["parameter"];
+            //Person person = JsonConvert.DeserializeObject<Person>(parameter);
+            Person person = PhoneApplicationService.Current.State["preson"] as Person;
             string print = "Name: " + person.FirstName + " " + person.LastName + "\n" +
                            "Birthdate: " + person.Day + "-" + person.Month + "-" + person.year + "\n" + 
                             "Gender: " + person.Gender + "\n" +
@@ -44,12 +49,12 @@ namespace SelfCare
                             "Email: " + person.Email + "\n" + "photo: "+person.Image;
 
       
-            BitmapImage bitmapGet = PhoneApplicationService.Current.State["photo"] as BitmapImage;
-       
+          //  BitmapImage bitmapGet = PhoneApplicationService.Current.State["photo"] as BitmapImage;
+            BitmapImage im = ImageBytesUtils.bytetoimage(person.Imagebytes);
 
-            image1.Source = bitmapGet;//new BitmapImage(new Uri(person.Image, UriKind.Relative));
+            image1.Source = im; //new BitmapImage(new Uri(person.Image, UriKind.Relative));
             image1.Width = 400;
-            image1.Height = 400;
+           image1.Height = 400;
             textBlock1.Text = print;
 
         }

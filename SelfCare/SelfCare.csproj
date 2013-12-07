@@ -54,6 +54,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\externallibs\Json50r8\Bin\Portable40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="system.data.linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel" />
     <Reference Include="System.Servicemodel.Web" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -61,21 +64,33 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DAL\AppSettings.cs" />
+    <Compile Include="DAL\ImageBytesUtils.cs" />
+    <Compile Include="MySettings.cs" />
     <Compile Include="DAL\RootObjectDao.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Agent.cs" />
     <Compile Include="Entities\CategoryMenu.cs" />
     <Compile Include="Entities\Data.cs" />
     <Compile Include="Entities\MyProfile.cs" />
+    <Compile Include="Entities\Node.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\RootObject.cs" />
     <Compile Include="FbPage.xaml.cs">
       <DependentUpon>FbPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IsolatedStorageEx1.xaml.cs">
+      <DependentUpon>IsolatedStorageEx1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDatabase.xaml.cs">
+      <DependentUpon>LocalDatabase.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -102,6 +117,16 @@
     <Compile Include="SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPage2.xaml.cs">
+      <DependentUpon>SettingsPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\AttributeExtensions.cs" />
+    <Compile Include="Settings\IsolatedStorageSettingsFile.cs" />
+    <Compile Include="Settings\PropertyChangedBase.cs" />
+    <Compile Include="Settings\SettingsProvider.cs" />
     <Compile Include="SimpleBinding.xaml.cs">
       <DependentUpon>SimpleBinding.xaml</DependentUpon>
     </Compile>
@@ -117,6 +142,9 @@
     <Compile Include="UpdatePage.xaml.cs">
       <DependentUpon>UpdatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UploadImage.xaml.cs">
+      <DependentUpon>UploadImage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WebServiceMenu.xaml.cs">
       <DependentUpon>WebServiceMenu.xaml</DependentUpon>
     </Compile>
@@ -127,6 +155,14 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="FbPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IsolatedStorageEx1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LocalDatabase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,6 +198,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SimpleBinding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +225,10 @@
     <Page Include="UpdatePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UploadImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WebServiceMenu.xaml">
       <SubType>Designer</SubType>
