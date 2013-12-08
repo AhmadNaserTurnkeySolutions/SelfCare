@@ -43,7 +43,8 @@ namespace SelfCare
 
         public void LoadData()
         {
-            lstEmails.ItemsSource = GetEmails();
+            DataContext = GetEmails(); 
+           // lstEmails.ItemsSource = GetEmails();
         }
 
         public IList<EmailClass> GetEmails()

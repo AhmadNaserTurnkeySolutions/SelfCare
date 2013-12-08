@@ -62,6 +62,12 @@ MyAgent.UserName, MyAgent.Password, MyAgent.Agency, MyAgent.Proficiency, MyAgent
     //this.DataContext = country;
 }
 
+ private void Image_Tap(object sender, GestureEventArgs e)
+ {
+     NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            
+ }
+
       
     }
 }

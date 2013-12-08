@@ -74,8 +74,21 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContactCreatePage.xaml.cs">
+      <DependentUpon>ContactCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContactCRUD.xaml.cs">
+      <DependentUpon>ContactCRUD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AgentDAL.cs" />
     <Compile Include="DAL\AppSettings.cs" />
+    <Compile Include="DAL\ContactDAL.cs" />
     <Compile Include="DAL\ImageBytesUtils.cs" />
+    <Compile Include="DAL\SelfCareContext.cs" />
+    <Compile Include="DisplayAllAgents.xaml.cs">
+      <DependentUpon>DisplayAllAgents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Contact.cs" />
     <Compile Include="Maps.xaml.cs">
       <DependentUpon>Maps.xaml</DependentUpon>
     </Compile>
@@ -164,6 +177,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="ContactCreatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContactCRUD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayAllAgents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FbPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

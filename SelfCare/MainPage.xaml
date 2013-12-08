@@ -64,6 +64,8 @@ SupportedOrientations="PortraitOrLandscape" Orientation="Portrait" >
             <HyperlinkButton Content="HyperlinkButton" Height="30" HorizontalAlignment="Left" Margin="201,717,0,0" Name="hyperlinkButton6" VerticalAlignment="Top" Width="200" Click="hyperlinkButton6_Click" />
             <HyperlinkButton Content="settings" Height="30" HorizontalAlignment="Left" Margin="15,681,0,0" Name="hyperlinkButton7" VerticalAlignment="Top" Width="129" Click="hyperlinkButton7_Click" />
             <HyperlinkButton Content="settings2" Height="30" HorizontalAlignment="Left" Margin="150,681,0,0" Name="hyperlinkButton8" VerticalAlignment="Top" Width="200" Click="hyperlinkButton8_Click" />
+            <HyperlinkButton Content="AllAgents" Height="30" HorizontalAlignment="Left" Margin="11,645,0,0" Name="hyperlinkButton9" VerticalAlignment="Top" Width="147" Click="hyperlinkButton9_Click" />
+            <HyperlinkButton Content="Contact Manager" Height="30" HorizontalAlignment="Left" Margin="15,609,0,0" Name="hyperlinkButton10" VerticalAlignment="Top" Width="200" Click="hyperlinkButton10_Click" />
         </Grid>
 
 

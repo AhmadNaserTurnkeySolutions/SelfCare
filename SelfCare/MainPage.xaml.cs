@@ -103,5 +103,19 @@ namespace SelfCare
         {
             NavigationService.Navigate(new Uri("/SettingsPage2.xaml", UriKind.Relative));
         }
+
+    
+
+        private void hyperlinkButton9_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/DisplayAllAgents.xaml", UriKind.Relative));
+
+        }
+
+        private void hyperlinkButton10_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ContactCRUD.xaml", UriKind.Relative));
+           
+        }
     }
 }

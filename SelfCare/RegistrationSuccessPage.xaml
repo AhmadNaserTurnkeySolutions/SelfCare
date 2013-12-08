@@ -23,7 +23,7 @@
 
 
         <StackPanel>
-            <Image Margin="0 150 0 0" Width="100" Source="/SelfCare;component/Images/correct.png" />
+            <Image Margin="0 150 0 0" Width="100" Source="/SelfCare;component/Images/correct.png" Tap="Image_Tap" />
             <TextBlock Margin="0 10 0 0" Width="450" Height="63" Name="textBlock1" Text="Account Has been Created !" FontSize="36" />
             <TextBlock  FontSize="16" Height="532" Name="textBlock2" Text="Account Has been Created !" Width="450" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="{StaticResource PhoneFontFamilySemiLight}"/>
         </StackPanel>

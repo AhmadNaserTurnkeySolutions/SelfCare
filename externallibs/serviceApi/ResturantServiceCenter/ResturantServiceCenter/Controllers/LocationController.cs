@@ -158,7 +158,7 @@ return Json(locations);
                               distance = getDistance(s.lat, s.lng, lat1, lng1)
                             };
             locations = from s in locations.ToList<Location>()
-                         where s.distance < 10000//km
+                         where s.distance > 1000//km
                          select new Location
                          {
                              Id = s.Id,

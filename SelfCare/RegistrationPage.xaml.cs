@@ -16,6 +16,7 @@ using System.Runtime.Serialization.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.Phone.Shell;
+using SelfCare.DAL;
 namespace SelfCare
 {
     public partial class RegistrationPage : PhoneApplicationPage
@@ -75,6 +76,10 @@ namespace SelfCare
              MyAgent.RecordCreatedDateTime = RecordCreatedDateTime;
              MyAgent.UserName = UserName;
              MyAgent.IsUndercover = IsUndercover;
+
+             AgentDAL dao = new AgentDAL();
+             dao.InsertAgent(MyAgent);
+
 
             // var Test = MyAgent;
 
@@ -152,6 +157,8 @@ namespace SelfCare
             obj.AgentReference.IsUndercover = IsUndercover;
 
         }
+
+    
 
     }
 }

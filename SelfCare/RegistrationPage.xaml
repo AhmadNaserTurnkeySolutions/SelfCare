@@ -153,9 +153,6 @@
                     Margin="11,20,-11,50" Grid.RowSpan="2" Click="okButton_Click" />
 
         </Grid>
-
-
-
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->
