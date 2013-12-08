@@ -44,6 +44,8 @@ namespace SelfCare.DAL
         public void InsertContact(Contact Contact)
         {
 
+
+     
             con.Contacts.InsertOnSubmit(Contact);
             con.SubmitChanges();
 

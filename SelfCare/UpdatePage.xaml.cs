@@ -64,9 +64,7 @@ namespace SelfCare
               imageString = e.OriginalFileName;
    
 
-                BitmapImage  myImage = new BitmapImage();
-                myImage.SetSource(e.ChosenPhoto);
-                image1.Source = myImage;
+
                // PhoneApplicationService.Current.State["photo"] = myImage;
 
                person = new Person();
@@ -82,6 +80,10 @@ namespace SelfCare
                 person.Email = email.Text;
                 person.Phone = phone.Text;
 
+
+                BitmapImage myImage = new BitmapImage();
+                myImage.SetSource(e.ChosenPhoto);
+                image1.Source = myImage;
                 MemoryStream ms = new MemoryStream();
                 WriteableBitmap wb = new WriteableBitmap(myImage);
                 wb.SaveJpeg(ms, myImage.PixelWidth, myImage.PixelHeight, 0, 100);

@@ -9,6 +9,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Data.Linq.Mapping;
+using System.Windows.Media.Imaging;
+using SelfCare.DAL;
 
 namespace SelfCare.Entities
 {
@@ -26,6 +28,14 @@ namespace SelfCare.Entities
         public string Address { set; get; }
         [Column()]
         public string Phone { set; get; }
+        [Column()]
+        public string Photo { set; get; }
+        //[Column(DbType = "image")]
+        //public byte[] Imagebytes { set; get; }
+
+        public BitmapImage BI { get { return ImagesUtils.LoadImageFromIsolatedStorage(Photo); } }
+
+
 
     }
 }

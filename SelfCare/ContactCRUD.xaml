@@ -29,6 +29,7 @@
                                 <StackPanel>
 
                                     <TextBlock Text="{Binding Lname}" />
+                                    <Image Source="{Binding BI}" Width="300" Height="300" />
                                 </StackPanel>
                             </DataTemplate>
                             

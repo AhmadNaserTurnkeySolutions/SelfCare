@@ -14,6 +14,7 @@ using Microsoft.Phone.Tasks;
 using System.Windows.Media.Imaging;
 using SelfCare.Entities;
 using SelfCare.DAL;
+using System.IO;
 
 namespace SelfCare
 {
@@ -21,7 +22,8 @@ namespace SelfCare
     {
 
         ContactDAL dao;
-
+        byte[] choosenphoto = null;
+       string choosenphotofile = null;
         PhotoChooserTask photoChooserTask;
         public ContactCRUD()
         {
@@ -45,12 +47,59 @@ namespace SelfCare
             if (e.TaskResult == TaskResult.OK)
             {
                 //  MessageBox.Show(e.ChosenPhoto.ToString());
-                BitmapImage myImage = new BitmapImage();
-                myImage.SetSource(e.ChosenPhoto);
+             
+                
 
+
+              //  choosenphotofile = ImageBytesUtils.SaveImage(e.ChosenPhoto, 0, 100);
+
+                ImagesUtils.SaveAndLoadToJpeg(e.ChosenPhoto);
                 ImageBrush imageBrush = new ImageBrush();
-                imageBrush.ImageSource = myImage;
-                this.imagepanel.Background = imageBrush;
+                BitmapImage myImage = new BitmapImage();
+
+                string savedImagefilename = ImagesUtils.SaveToJpeg(e.ChosenPhoto);
+                choosenphotofile = savedImagefilename;
+
+
+
+
+
+
+
+
+
+                #region 1-start(save image to offline storage (stream))
+                // 1 save image to offline storage (stream)
+               myImage = ImagesUtils.LoadImageFromIsolatedStorage(savedImagefilename);// myImage;
+               imageBrush.ImageSource = myImage;
+               this.imagepanel.Background = imageBrush;
+
+                #endregion start(save image to offline storage (stream))
+
+
+               #region 2 save image to online server storage (bytes)
+               // 2 save image to online server storage (bytes)
+                MemoryStream ms = new MemoryStream();
+                WriteableBitmap wb = new WriteableBitmap(myImage);
+                wb.SaveJpeg(ms, myImage.PixelWidth, myImage.PixelHeight, 0, 100);
+                byte[] imageBytes = ms.ToArray();
+
+                ImagesUtils.SaveToJpegOnline(imageBytes);
+
+
+               #endregion 2 save image to online server storage (bytes)
+
+
+
+                /*   MemoryStream ms = new MemoryStream();
+                WriteableBitmap wb = new WriteableBitmap(myImage);
+                wb.SaveJpeg(ms, myImage.PixelWidth, myImage.PixelHeight, 0, 100);
+                byte[] imageBytes = ms.ToArray();
+                choosenphoto = imageBytes;
+
+                */
+
+
 
             }
         }
@@ -62,7 +111,8 @@ namespace SelfCare
             c.Fname = this.txtFname.Text;
             c.Lname = this.txtLName.Text;
             c.Phone = this.txtPhone.Text;
-
+            c.Photo = choosenphotofile;
+          //  c.Imagebytes = choosenphoto;
             dao.InsertContact(c);
             MessageBox.Show(c.Lname +" is inserted");
 
