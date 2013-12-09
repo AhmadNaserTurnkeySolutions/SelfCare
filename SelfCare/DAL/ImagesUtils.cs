@@ -114,10 +114,10 @@ namespace SelfCare.DAL
             {
 
 
-                string s = sbytedata.ToString();
+                //string s = sbytedata.ToString();
                 WebClient wc = new WebClient();
                 Uri u = new Uri("http://localhost:2819/File/Upload");
-                wc.OpenWriteCompleted += new OpenWriteCompletedEventHandler(wc_OpenWriteCompleted);
+               wc.OpenWriteCompleted += new OpenWriteCompletedEventHandler(wc_OpenWriteCompleted);
                 wc.OpenWriteAsync(u, "POST", sbytedata);
 
             }
@@ -142,7 +142,10 @@ namespace SelfCare.DAL
                 outputStream.Write(fileContent, 0, fileContent.Length);
                 outputStream.Flush();
                 outputStream.Close();
-                string s = e.Result.ToString(); ;
+
+                string s = e.Result.ToString();
+
+                var x = e.Result;
 
             }
         }

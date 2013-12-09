@@ -42,5 +42,14 @@ namespace SelfCare.DAL
         }
 
 
+        public Table<User> Users
+        {
+            get
+            {
+                return this.GetTable<User>();
+            }
+        }
+
+
     }
 }

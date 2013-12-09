@@ -26,7 +26,7 @@ namespace SelfCare
         private void button2_Click(object sender, RoutedEventArgs e)
         {
 
-            string request = "/MenuPage.xaml";
+            string request = "/Views/MenuPage.xaml";
            
             NavigationService.Navigate(new Uri(request, UriKind.Relative));
 
@@ -55,40 +55,40 @@ namespace SelfCare
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/RegistrationPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/RegistrationPage.xaml", UriKind.Relative));
             
         }
 
         private void hyperlinkButton1_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SimpleBinding.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/SimpleBinding.xaml", UriKind.Relative));
         }
 
         private void hyperlinkButton2_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SimpleBinding2.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/SimpleBinding2.xaml", UriKind.Relative));
         }
 
         private void hyperlinkButton3_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SimpleBinding3.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/SimpleBinding3.xaml", UriKind.Relative));
         }
 
         private void hyperlinkButton4_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/my.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/my.xaml", UriKind.Relative));
            
         }
 
         private void hyperlinkButton5_Click(object sender, RoutedEventArgs e)
         {
 
-            NavigationService.Navigate(new Uri("/SimpleBinding4.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/SimpleBinding4.xaml", UriKind.Relative));
         }
 
         private void hyperlinkButton6_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/UpdatePage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/UpdatePage.xaml", UriKind.Relative));
             
         }
 
@@ -96,26 +96,32 @@ namespace SelfCare
         {
 
 
-            NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/SettingsPage.xaml", UriKind.Relative));
         }
 
         private void hyperlinkButton8_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SettingsPage2.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/SettingsPage2.xaml", UriKind.Relative));
         }
 
     
 
         private void hyperlinkButton9_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/DisplayAllAgents.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/DisplayAllAgents.xaml", UriKind.Relative));
 
         }
 
         private void hyperlinkButton10_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ContactCRUD.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/ContactCRUD.xaml", UriKind.Relative));
            
+        }
+
+        private void hyperlinkButton11_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/UserPage.xaml", UriKind.Relative));
+          
         }
     }
 }

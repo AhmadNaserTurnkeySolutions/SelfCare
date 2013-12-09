@@ -74,7 +74,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContactCRUD.xaml.cs">
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Views\ContactCRUD.xaml.cs">
       <DependentUpon>ContactCRUD.xaml</DependentUpon>
     </Compile>
     <Compile Include="DAL\AgentDAL.cs" />
@@ -83,14 +85,14 @@
     <Compile Include="DAL\ImageBytesUtils.cs" />
     <Compile Include="DAL\ImagesUtils.cs" />
     <Compile Include="DAL\SelfCareContext.cs" />
-    <Compile Include="DisplayAllAgents.xaml.cs">
+    <Compile Include="Views\DisplayAllAgents.xaml.cs">
       <DependentUpon>DisplayAllAgents.xaml</DependentUpon>
     </Compile>
     <Compile Include="Entities\Contact.cs" />
-    <Compile Include="Maps.xaml.cs">
+    <Compile Include="Views\Maps.xaml.cs">
       <DependentUpon>Maps.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Maps1.xaml.cs">
+    <Compile Include="Views\Maps1.xaml.cs">
       <DependentUpon>Maps1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Map\GeoLocationMock.cs" />
@@ -104,69 +106,72 @@
     <Compile Include="Entities\Node.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\RootObject.cs" />
-    <Compile Include="FbPage.xaml.cs">
+    <Compile Include="Views\FbPage.xaml.cs">
       <DependentUpon>FbPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IsolatedStorageEx1.xaml.cs">
+    <Compile Include="Views\IsolatedStorageEx1.xaml.cs">
       <DependentUpon>IsolatedStorageEx1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LocalDatabase.xaml.cs">
+    <Compile Include="Views\LocalDatabase.xaml.cs">
       <DependentUpon>LocalDatabase.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuPage.xaml.cs">
+    <Compile Include="Views\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="my.xaml.cs">
+    <Compile Include="Views\my.xaml.cs">
       <DependentUpon>my.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonData.xaml.cs">
+    <Compile Include="Views\PersonData.xaml.cs">
       <DependentUpon>PersonData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrationPage.xaml.cs">
+    <Compile Include="Views\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationSuccessPage.xaml.cs">
+    <Compile Include="Views\RegistrationSuccessPage.xaml.cs">
       <DependentUpon>RegistrationSuccessPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ResturantMenu.xaml.cs">
+    <Compile Include="Views\ResturantMenu.xaml.cs">
       <DependentUpon>ResturantMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SecondPage.xaml.cs">
+    <Compile Include="Views\SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsPage.xaml.cs">
+    <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsPage2.xaml.cs">
+    <Compile Include="Views\SettingsPage2.xaml.cs">
       <DependentUpon>SettingsPage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings\AttributeExtensions.cs" />
     <Compile Include="Settings\IsolatedStorageSettingsFile.cs" />
     <Compile Include="Settings\PropertyChangedBase.cs" />
     <Compile Include="Settings\SettingsProvider.cs" />
-    <Compile Include="SimpleBinding.xaml.cs">
+    <Compile Include="Views\SimpleBinding.xaml.cs">
       <DependentUpon>SimpleBinding.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SimpleBinding2.xaml.cs">
+    <Compile Include="Views\SimpleBinding2.xaml.cs">
       <DependentUpon>SimpleBinding2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SimpleBinding3.xaml.cs">
+    <Compile Include="Views\SimpleBinding3.xaml.cs">
       <DependentUpon>SimpleBinding3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SimpleBinding4.xaml.cs">
+    <Compile Include="Views\SimpleBinding4.xaml.cs">
       <DependentUpon>SimpleBinding4.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdatePage.xaml.cs">
+    <Compile Include="Views\UpdatePage.xaml.cs">
       <DependentUpon>UpdatePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UploadImage.xaml.cs">
+    <Compile Include="Views\UploadImage.xaml.cs">
       <DependentUpon>UploadImage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WebServiceMenu.xaml.cs">
+    <Compile Include="Views\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebServiceMenu.xaml.cs">
       <DependentUpon>WebServiceMenu.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -175,23 +180,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="ContactCRUD.xaml">
+    <Page Include="Views\ContactCRUD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DisplayAllAgents.xaml">
+    <Page Include="Views\DisplayAllAgents.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FbPage.xaml">
+    <Page Include="Views\FbPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IsolatedStorageEx1.xaml">
+    <Page Include="Views\IsolatedStorageEx1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LocalDatabase.xaml">
+    <Page Include="Views\LocalDatabase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,75 +204,79 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Maps.xaml">
+    <Page Include="Views\Maps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Maps1.xaml">
+    <Page Include="Views\Maps1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuPage.xaml">
+    <Page Include="Views\MenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="my.xaml">
+    <Page Include="Views\my.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PersonData.xaml">
+    <Page Include="Views\PersonData.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="RegistrationPage.xaml">
+    <Page Include="Views\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegistrationSuccessPage.xaml">
+    <Page Include="Views\RegistrationSuccessPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResturantMenu.xaml">
+    <Page Include="Views\ResturantMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SecondPage.xaml">
+    <Page Include="Views\SecondPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SettingsPage.xaml">
+    <Page Include="Views\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SettingsPage2.xaml">
+    <Page Include="Views\SettingsPage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SimpleBinding.xaml">
+    <Page Include="Views\SimpleBinding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SimpleBinding2.xaml">
+    <Page Include="Views\SimpleBinding2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SimpleBinding3.xaml">
+    <Page Include="Views\SimpleBinding3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SimpleBinding4.xaml">
+    <Page Include="Views\SimpleBinding4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdatePage.xaml">
+    <Page Include="Views\UpdatePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UploadImage.xaml">
+    <Page Include="Views\UploadImage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WebServiceMenu.xaml">
+    <Page Include="Views\UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WebServiceMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

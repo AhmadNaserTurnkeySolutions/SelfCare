@@ -44,8 +44,8 @@ namespace ResturantServiceCenter.Controllers
                         }
                     }
                 }
- 
-                return Json(new { Result = "Complete" });
+
+                return Json(new { Result = "Complete", URl = filename });
             }
             catch (Exception ex)
             {
