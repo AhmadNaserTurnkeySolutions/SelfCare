@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Media.Imaging;
 
 namespace SelfCare
 {
@@ -22,7 +23,7 @@ namespace SelfCare
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
-
+        public static BitmapImage BG = new BitmapImage(new Uri(@"http://profile.ak.fbcdn.net/hprofile-ak-ash2/1118127_100004242222671_643383850_s.jpg"));
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>

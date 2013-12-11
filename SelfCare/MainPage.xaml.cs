@@ -10,25 +10,51 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.Windows.Media.Imaging;
 
 namespace SelfCare
 {
     public partial class MainPage : PhoneApplicationPage
     {
         // Constructor
+
+        public object IM { get {
+            ImageBrush imageBrush = new ImageBrush();
+            imageBrush.ImageSource = App.BG;
+
+            return imageBrush;
+        }
+        }
+
+        public object IM1
+        {
+            get
+            {
+   
+                return App.BG;
+            }
+        }
+
+
         public MainPage()
         {
             InitializeComponent();
+          //  ImageBrush imageBrush = new ImageBrush();
+            //BitmapImage BG1 = new BitmapImage(new Uri("http://profile.ak.fbcdn.net/hprofile-ak-ash2/1118127_100004242222671_643383850_s.jpg"));
+           // imageBrush.ImageSource = App.BG;
+           // imgprofile.Background = imageBrush;
 
-    
+        
+            DataContext = this;
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
 
             string request = "/Views/MenuPage.xaml";
-           
-            NavigationService.Navigate(new Uri(request, UriKind.Relative));
+
+    
+          NavigationService.Navigate(new Uri(request, UriKind.Relative));
 
         }
 

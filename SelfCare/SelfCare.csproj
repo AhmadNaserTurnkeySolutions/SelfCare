@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="TeamMemberImageBrushConverter.cs" />
     <Compile Include="Views\ContactCRUD.xaml.cs">
       <DependentUpon>ContactCRUD.xaml</DependentUpon>
     </Compile>

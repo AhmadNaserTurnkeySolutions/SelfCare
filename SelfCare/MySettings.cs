@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using SelfCare.Settings;
 using System.ComponentModel;
+using System.Windows.Media.Imaging;
 
 namespace SelfCare
 {
@@ -21,11 +22,11 @@ namespace SelfCare
     {
         private bool _isFirstRun;
         private string _hello;
-        private string _mail;
+        private object _mail;
         private bool _true=true;
         private bool _false =false;
         private int _val = 0;
-
+        private BitmapImage _bi;
         public MySettings() : base("MySettings.xml") { }
 
 
@@ -90,8 +91,8 @@ namespace SelfCare
                  NotifyPropertyChanged("GroundShippingSetting");
              }
          }
-         [DefaultValue("ahmadnassr@gmail.com")]
-        public  string EmailSetting
+       [DefaultValue(@"ahmad")]
+         public object EmailSetting
          {
              get { return _mail; }
              set
@@ -100,6 +101,25 @@ namespace SelfCare
                  NotifyPropertyChanged("EmailSetting");
              }
          }
+
+
+       public BitmapImage ImageSetting
+         {
+             get { return getImage(); }
+             set
+             {
+                 _bi = value;
+                 NotifyPropertyChanged("ImageSetting");
+             }
+         }
+
+
+       private BitmapImage getImage()
+        {
+
+            return new BitmapImage(new Uri(@"http://ahmadnaser.com/wp-content/uploads/2013/12/bg.png"));
+
+        }
 
 
 

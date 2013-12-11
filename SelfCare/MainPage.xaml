@@ -29,11 +29,8 @@ SupportedOrientations="PortraitOrLandscape" Orientation="Portrait" >
     <!--LayoutRoot is the root grid where all page content is placed-->
 <Grid x:Name="LayoutRoot" >
 
-
- 
-
         <Grid.Background>
-            <ImageBrush ImageSource="/SelfCare;component/Images/bg.png" Stretch="UniformToFill" />
+            <ImageBrush ImageSource="{Binding Source={StaticResource MySettings}, Path=ImageSetting, Mode=TwoWay}" Stretch="UniformToFill" />
         </Grid.Background>
 
 
@@ -41,17 +38,7 @@ SupportedOrientations="PortraitOrLandscape" Orientation="Portrait" >
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-      
-
-       <!-- 
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
-       -->
-
-     
-     <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="Create Account" Height="88" HorizontalAlignment="Left" Margin="0,412,0,0" Name="button1" VerticalAlignment="Top" Width="231" Click="button1_Click" />
             <Button Content="Login" Height="88" HorizontalAlignment="Left" Margin="221,412,0,0" Name="button2" VerticalAlignment="Top" Width="235" Background="#FF41B19B" Click="button2_Click" />
             <TextBox Height="88" HorizontalAlignment="Left" Margin="-4,248,0,0" Name="textBox1" Text="Username" VerticalAlignment="Top" Width="460" Background="#FFDCE8F1" BorderBrush="White" BorderThickness="5" Foreground="Gray" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" Tag="UserName" />
@@ -65,16 +52,17 @@ SupportedOrientations="PortraitOrLandscape" Orientation="Portrait" >
             <HyperlinkButton Content="settings" Height="30" HorizontalAlignment="Left" Margin="15,681,0,0" Name="hyperlinkButton7" VerticalAlignment="Top" Width="129" Click="hyperlinkButton7_Click" />
             <HyperlinkButton Content="settings2" Height="30" HorizontalAlignment="Left" Margin="150,681,0,0" Name="hyperlinkButton8" VerticalAlignment="Top" Width="200" Click="hyperlinkButton8_Click" />
             <HyperlinkButton Content="AllAgents" Height="30" HorizontalAlignment="Left" Margin="11,645,0,0" Name="hyperlinkButton9" VerticalAlignment="Top" Width="147" Click="hyperlinkButton9_Click" />
-            <HyperlinkButton Content="Contact Manager" Height="30" HorizontalAlignment="Left" Margin="15,609,0,0" Name="hyperlinkButton10" VerticalAlignment="Top" Width="200" Click="hyperlinkButton10_Click" />
+            <HyperlinkButton Content="Contact Manager" Height="30" HorizontalAlignment="Left" Margin="11,609,0,0" Name="hyperlinkButton10" VerticalAlignment="Top" Width="200" Click="hyperlinkButton10_Click" />
             <HyperlinkButton Content="UserManager" Height="30" HorizontalAlignment="Left" Margin="-12,573,0,0" Name="hyperlinkButton11" VerticalAlignment="Top" Width="200" Click="hyperlinkButton11_Click" />
         </Grid>
-
-
-        
-
-
-
-   </Grid>
+        <!--<StackPanel Margin="70,0,49,0" Name="imgprofile" Grid.Row="1" Background="{Binding IM}"></StackPanel>-->
+        <!-- 
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+       -->
+    </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
     <!--<phone:PhoneApplicationPage.ApplicationBar>

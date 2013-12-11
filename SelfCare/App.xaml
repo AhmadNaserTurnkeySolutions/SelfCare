@@ -14,8 +14,8 @@
     <Application.Resources>
         <!-- Settings -->
       <local:MySettings x:Key="MySettings" AlwaysSaveOnChange="True" />
+        <local:TeamMemberImageBrushConverter x:Key="imgBrush"/>
     </Application.Resources>
-
 
 
     <Application.ApplicationLifetimeObjects>

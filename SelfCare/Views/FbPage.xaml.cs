@@ -46,6 +46,7 @@ namespace SelfCare
 
                     string info = string.Format("Id : {0}\nUserName : {1}\n{2}", root1.username, root1.id, root1.gender);
                     txtInfo.Text = info;
+                    var x1 = root1.picture.data.url;
                     imageBrush.ImageSource = new BitmapImage(new Uri(root1.picture.data.url));
                     imgprofile.Background = imageBrush;
 
